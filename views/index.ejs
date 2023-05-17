@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- title -->
+    <title>PickNTrack</title>
+
+    <!-- tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+
+  <body>
+    <!-- internal CSS -->
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      .bg-blackish {
+        background-color: #2e2e2e;
+      }
+      .bg-yellowish {
+        background-color: #ffe1a3;
+      }
+      .bg-yellow-light {
+        background-color: #fdf1e0;
+      }
+      /* Popup CSS */
+      
+.popup
+{
+  height: auto;
+  width: 580px;
+  left: 30%;
+  top: 30px;
+  border-radius: 10px;
+  position: absolute;
+  background-color:aliceblue;
+  align-items: center;
+  justify-content: center;
+  z-index:2;
+  display: none;
+  
+}
+.popup h1
+{
+  margin-top:-20px;
+  margin-left: 10px;
+  font-size: 25px;
+}
+.popupcities
+{
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 140px 140px 140px;
+  justify-content: space-evenly;
+  row-gap: 2px;
+  margin-top: 15px;
+  overflow-y: auto;
+  height: 420px;
+}
+.cities
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+.cities img:hover
+{
+
+  transform: rotate(360deg);
+}
+.cities img
+{
+  
+  border: 1px solid white;
+  border-radius: 100%;
+  height: 90px;
+  width: 90px;
+  transition: transform .7s ease-in-out;
+}
+.cities h1
+{
+  margin-top: -40px;
+  font-family:'Poppins';
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+.popsearch input
+{
+  margin: 10px;
+  width: 550px;
+  height: 40px;
+  background: #E4E4E4;
+  border-radius: 100px;
+  border: 1px none none;
+  margin-left: 15px;
+}
+.firstdivpop
+{
+   display:flex;
+   flex-direction: row;
+   margin-top: 30px;
+}
+.firstdivpop a
+{
+  text-decoration: none;
+  color: black;
+  margin-left: 330px;
+}
+
+@media screen and (max-width: 480px)
+{
+    .popup
+    {
+        left: 20px;
+        max-width: 90%;
+        height: auto;
+
+    }
+    .footer-home
+    {
+        display: none;
+    }
+    .cities img
+    {
+        width: 60px;
+        height: 60px;
+    }
+    .cities h1
+    {
+        font-size:15px;
+        font-weight: 700;
+    }
+    .popupcities
+    {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+    }
+    .popsearch input
+    {
+        max-width: 90%;
+    }
+    .firstdivpop
+    {
+          flex-direction: column;
+          max-width: 80%;
+          
+    }
+    .firstdivpop a
+    {
+        position: absolute;
+        right: 20px;
+    }
+   
+}
+/* Navbar */
+  #navbar
+  {
+    max-height: 60px;
+    transition: 0.5s ease;
+  }
+   #nav-list
+   {
+      opacity: 0;
+      transition: 1s ease;
+      pointer-events: none;
+      user-select: none;
+   }
+  #closemenu
+  {
+    display: none;
+  }
+ /* slider */
+ .mySlides {
+        display: none;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        transition: 0.6s ease;
+        user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+
+      /* menu */
+      .bg-blur {
+        backdrop-filter: blur(2px) saturate(180%);
+        -webkit-backdrop-filter: blur(2px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+      }
+@media all and (max-width: 1000px) and (min-width: 500px)
+{
+    .popup
+    {
+        left: 20%;
+        right: 20%;
+        max-width: 70%;
+    }
+    .footer-home
+    {
+        display: none;
+    }
+    .popsearch input
+    {
+        max-width: 90%;
+    }
+    .firstdivpop a
+    {
+        margin-left: auto;
+    }
+    .cities img
+    {
+        width: 80px;
+        height: 80px;
+    }
+    .cities h1
+    {
+        font-size:20px;
+        font-weight: 700;
+    }
+    .popupcities
+    {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        row-gap: 5;
+       
+    }
+    .firstdivpop
+    {
+          max-width: 80%;
+    }
+}
+
+/* Popup CSS Ends */
+    </style>
+          <!--Popup Page -->
+ <div class="popup" id="popuppage">
+    <div class="sticky">
+      <div class="firstdivpop justify-between flex">
+        <h1 class="pl-[3px]"><b>Select Your City</b></h1>
+        <a href="#" id="closePopup">
+          <h1 class="font-bold absolute right-5 flex">X</h1>
+        </a>
+      </div>
+      <div class="popsearch">
+        <input type="text" id="searchbar" placeholder="Search City to select" class="pl-[10px]" onkeyup="search_cities()">
+      </div>
+    </div>
+  
+    <div class="popupcities">
+      <div class="cities">
+        <img src="./public/images/delhi.jfif" alt=""> <br><br>
+        <h1><a>Delhi</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/mumbaicity.jfif" alt=""> <br><br>
+        <h1><a>Mumbai</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/banglore.jfif" alt=""> <br><br>
+        <h1><a>Bangalore</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/chennai.jfif" alt=""> <br><br>
+        <h1><a>Chennai</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/kolkata.jfif" alt=""> <br><br>
+        <h1><a>Kolkata</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/hyderabad.jfif" alt=""> <br><br>
+        <h1><a>Hyderabad</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/ranchi.jfif" alt=""> <br><br>
+        <h1><a>Ranchi</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/pune.jfif" alt=""> <br><br>
+        <h1><a>Pune</a></h1>
+      </div>
+      <div class="cities">
+        <img src="./public/images/ahmedabad.jfif" alt=""> <br><br>
+        <h1><a>Ahmedabad</a></h1>
+      </div>
+    </div>
+
+  </div>
+  <%-include('partials/privacy')-%>
+  <%-include('partials/tandc')-%>
+  <%-include('partials/faq')-%>
+  <%-include('partials/disclaimer')-%>
+  <!--PopUp End-->
+<%-include('partials/header')-%>
+
+    <!-- hero section -->
+    <div class="md:flex flex-row-reverse justify-between items-center md:pl-5">
+      <img
+        src="public/images/image.svg"
+        alt="hero section image"
+        class="h-64 w-64 mx-auto md:mx-0 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]"
+      />
+      <div class="text-center space-y-5 p-2 md:text-left lg:max-w-lg lg:mx-24 ">
+        <p class="font-bold text-3xl md:font-extrabold md:text-4xl lg:text-6xl">
+          Let's Get You Moving!
+        </p>
+        <p class="font-bold md:text-lg lg:text-xl">
+          Find, compare, and hire certified and experienced movers in one
+          location.
+        </p>
+        <p class="text-sm md:text-base lg:text-lg text-justify">
+          Save time and money by connecting with us to help set up your
+          utilities, find movers & other services
+        </p>
+        <a href="/contact">
+        <button
+          class="bg-blackish text-white px-3 py-2 lg:p-4 rounded-xl md:text-xl lg:text-xl mt-[20px] "
+        >
+          Schedule A Call
+        </button>
+      </a>
+      </div>
+    </div>
+     <!--Popup Page-->
+
+    <!-- relocation options section -->
+    <div class="my-16">
+      <p
+        class="text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl"
+      >
+        Discover Your Relocation options
+      </p>
+      <div
+        class="grid mx-auto w-fit gap-10 p-5 sm:grid-cols-2 md:grid-cols-4 lg:text-lg lg:p-10"
+      >
+        <div class="flex flex-col items-center gap-5">
+          <img src="public/images/local-move-logo.svg" alt="local move" />
+          <p class="text-center">Local<br> Move</p>
+        </div>
+        <div class="flex flex-col items-center gap-5">
+          <img src="public/images/domestic-move-logo.svg" alt="domestic move" />
+          <p class="text-center">Domestic<br> Move</p>
+        </div>
+        <div class="flex flex-col items-center gap-5">
+          <img src="public/images/international-move-logo.svg" alt="International Move" class="rounded-full" />
+          <p class="text-center">International<br> Move</p>
+        </div>
+        <div class="flex flex-col items-center gap-5 w-full ">
+          <img src="public/images/wct-logo.svg" alt="Warehouse & Car Transportation" />
+          <p class="text-center">Warehouse & Car Transportation</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- plan route section -->
+    <div>
+      <p
+        class="text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl mx-5"
+      >
+        Get ready to plan your route to your new city!
+      </p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:px-24">
+        <div class="shadow w-72 mx-auto rounded-lg my-10">
+          <div class="bg-yellow-light w-full rounded-t-lg px-5 p-10">
+            <img src="public/images/moving.svg" alt="moving logo" class="h-44" />
+          </div>
+          <div class="space-y-2 p-5 text-center">
+            <p class="font-extrabold text-lg">Moving</p>
+            <p class="font-bold">
+              Local Movers • Domestic Movers • Top Relocation Companies •
+              Relocation Deals & Discounts
+            </p>
+          </div>
+        </div>
+        <div class="shadow w-72 mx-auto rounded-lg my-10">
+          <div class="bg-yellow-light w-full rounded-t-lg px-5 p-10">
+            <img
+              src="public/images/planning-logo.svg"
+              alt="moving logo"
+              class="h-44"
+            />
+          </div>
+          <div class="space-y-2 p-5 text-center">
+            <p class="font-extrabold text-lg">Planning</p>
+            <p class="font-bold">
+              Checklist • Easy packing • Way to Buy Packing Materials •
+              Relocation Paper Work Explain
+            </p>
+          </div>
+        </div>
+        <div class="shadow w-72 mx-auto rounded-lg my-10">
+          <div class="bg-yellow-light w-full rounded-t-lg px-5 p-10">
+            <img
+              src="public/images/deciding-home-logo.svg"
+              alt="moving logo"
+              class="h-44"
+            />
+          </div>
+          <div class="space-y-2 p-5 text-center">
+            <p class="font-extrabold text-lg">Deciding Home</p>
+            <p class="font-bold">
+              Utility & Handyman Services • Most Expensive Cities • Sunniest
+              Cities in India • Lowest Cost of Living by Cities
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- covid-19 resources section -->
+    <div class="my-10">
+      <p
+        class="text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl"
+      >
+        Covid-19 Resources
+      </p>
+      <div
+        class="p-10 flex flex-col gap-5 items-center md:flex-row lg:max-w-6xl mx-auto lg:gap-16"
+      >
+        <img
+          src="public/images/covid-mask.svg"
+          alt="people wearing masks"
+          class="w-44 md:w-64 lg:w-full"
+        />
+        <p class="text-justify text-xs sm:text-sm md:text-base lg:text-lg">
+          Pick N Track has made a feeling of trust and inner serenity around
+          home moving. Particularly during a difficult time like this, our
+          responsibility hasn't faltered and has developed considerably
+          further."Wellbeing First" is at the center of all that we do, and each
+          colleague is committed to playing out your move rapidly and securely.
+          As we have attempted to adjust and immediately think of new Process,
+          the wellbeing of our clients and teams have been top of brain
+          regardless of anything else.
+        </p>
+      </div>
+    </div>
+
+    <!-- accredited section -->
+    <div class="my-10">
+      <p class="text-center text-sm text-[#ba3c21] font-bold my-5">
+        We Are Accredited
+      </p>
+      <p
+        class="text-center text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl"
+      >
+        Pick N Track
+      </p>
+      <div
+        class="p-10 flex flex-col gap-5 items-center md:flex-row-reverse lg:max-w-6xl mx-auto lg:gap-16"
+      >
+        <img
+          src="public/images/transport.svg"
+          alt="people wearing masks"
+          class="w-44 md:w-64 lg:w-full"
+        />
+        <p class="text-justify text-xs sm:text-sm md:text-base lg:text-lg">
+          Pick And Track offers secure and genuine relocation services. We have
+          accredited Shifting partners across India, who will convey your No.1
+          household & corporate moving Services for local home packing moving
+          and domestic as well as international relocation services. Straight
+          forwardly interface with top packers and movers close by you, and get
+          fast charges assessment from best Packers and Movers from your area,
+          look at rates, evaluations, and surveys. You can contact anyone else
+          or request that we observe the best match close by packers movers
+          company.
+        </p>
+      </div>
+      <div
+        class="w-full flex justify-center md:justify-start md:pl-10 lg:pl-10 lg:max-w-6xl mx-auto"
+      >
+      <a href="/about">
+        <button
+          class="bg-blackish text-white px-3 sm:py-2 rounded-xl md:text-xl lg:text-xl"
+        >
+          Quick Enquiry
+        </button>
+      </a>
+      </div>
+    </div>
+
+    <!-- mfimovers sections -->
+    <div class="bg-yellow-light p-10 space-y-5 lg:space-y-10 lg:p-16 lg:mt-24">
+      <p
+        class="text-center text-lg font-bold sm:text-2xl md:text-3xl lg:text-4xl lg:max-w-6xl mx-auto lg:text-2xl"
+      >
+        Top <span class="text-[#865a00] font-extrabold">#mfimovers</span> in the
+        country
+      </p>
+      <p class=" lg:max-w-6xl mx-auto lg:text-lg ">
+        Looking for relocation companies in your area? Check out our #mfimovers
+        hubwhere we've vetted the top relocation companies in major cities and
+        states across India. <br />
+        Explore top movers in:- Ahmedabad | Bangalore | Chandigarh | Delhi/NCR |
+        Kolkata | Mumbai | Pune...
+      </p>
+    </div>
+
+    <!-- how it works section -->
+    <div class="my-24">
+      <p
+        class="text-center text-3xl font-bold sm:text-2xl md:text-3xl lg:text-4xl mb-10"
+      >
+        How It Works
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex flex-col items-center gap-5 m-3">
+          <div class="flex">
+            <img
+              src="public/images/requirement.svg"
+              alt="checklist logo"
+              class="w-44"
+            />
+            <img src="public/images/1.svg" alt="1 logo" class="-mt-36 -ml-16 w-16" />
+          </div>
+
+          <p class="font-bold ">Share your Shifting Requirement</p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-5 m-3">
+          <div class="flex">
+            <img
+              src="public/images/instant-quote.svg"
+              alt="instant quote logo"
+              class="w-44"
+            />
+            <img src="public/images/2.svg" alt="2 logo" class="-mt-36 -ml-16 w-16" />
+          </div>
+
+          <p class="font-bold">Receive Free Instant Quote</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-5 m-3">
+          <div class="flex">
+            <img
+              src="public/images/service-expert.svg"
+              alt="service expert logo"
+              class="w-44"
+            />
+            <img src="public/images/3.svg" alt="3 logo" class="-mt-36 -ml-16 w-16" />
+          </div>
+
+          <p class="font-bold">Assign Quality Service Expert</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-5 m-3">
+          <div class="flex">
+            <img
+              src="public/images/heavy-lifting.svg"
+              alt="heavy lifting logo"
+              class="w-44"
+            />
+            <img src="public/images/4.svg" alt="4 logo" class="-mt-36 -ml-16 w-16" />
+          </div>
+
+          <p class="font-bold">Leave the Heavy Lifting to Us</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- customer reviews section -->
+    <div class="mb-16">
+      <p
+        class="text-center text-lg font-bold sm:text-2xl md:text-3xl lg:text-4xl mb-16"
+      >
+        What Our Customers Say About Us!
+      </p>
+    <div class="slideshow-container">
+        <img
+          src="public/images/quotes.svg"
+          alt="quotes logo"
+          class="absolute -z-10 lg:w-56 w-36 mt-10 lg:mt-0"
+        />
+        <div class="mySlides fade">
+          <p class="text-[#808080] text-center my-5">Ayanjyoti Chakrabarti</p>
+          <p class="text-xs lg:text-base text-justify mx-10 lg:mx-24">
+            I had used the service of MFI's Pick N Track - Bangalore for my
+            house shifting. They delivered timely service. Took care of my
+            movement requirements end-end. Needed no or minimum supervision.
+            Packing material used were of high standard, resulting no damage
+            delivery. My requirement had the complexity of moving big articles
+            through stairs to 8th floor, which was handled very efficiently.In
+            summary, I was fully satisfied with the service received and would
+            recommend others.
+          </p>
+        </div>
+
+        <div class="mySlides fade">
+          <p class="text-[#808080] text-center my-5">Vivek Kumar</p>
+          <p class="text-xs lg:text-base text-justify mx-10 lg:mx-24">
+            I have used MFI Pick N Track - Bangalore services for shipping my car and belongings from Bengaluru to Lucknow. 
+            I was in contact with Mr. Ajit Sharma Ji founder of MFI. He is a thorough professional, trust worthy, logistic industry
+             veteran and excellent human being. I see that he has defined SOP for doing everything in MFI and partners. He explained me
+              topics which safeguard the customers interest. For example: The car should be insured and he offered me free car insurance
+               worth INR 5 lakhs, the car was cleaned before delivery, updating me with videos etc etc. And many small things which we ignore 
+               as a customer. I have never come across any packers company which safeguard end user interest which is very positive with MFI.
+             I highly recommend MFI Pick N Track - Bangalore and it's partner for their extremely excellent, quick and amazing services.
+          </p>
+        </div>
+
+        <div class="mySlides fade">
+          <p class="text-[#808080] text-center my-5">Manthan Talati</p>
+          <p class="text-xs lg:text-base text-justify mx-10 lg:mx-24">
+            I got to know about MFI Pick N Track - Bangalore from one of my friend.
+             I took their to transport the full household things (TV, Table, Beds, Fridge, Kitchen items, Clothes, etc.)
+              from Hyderabad to Bengaluru. All communication was very smooth and transparent. Their team came to Hyderabad house
+               2 days before and estimated the cost for transport. On the day of transport whole team of 3 persons came and packed every 
+               single item with Bubble sheet/Boxes etc. They are fast and expert in their work. They arrange separate tempo for us. Best part was, whole thing safely reached Bengaluru next morning only. At Bengaluru location also, their team unpacked everything. I do recommended MFI
+             for others whenever it's requires. Keep doing good work. Good luck MFI Pick N Track - Bangalore. Thanks for the support.
+          </p>
+        </div>
+        <div class="mySlides fade">
+          <p class="text-[#808080] text-center my-5">Sarthak Budhia</p>
+          <p class="text-xs lg:text-base text-justify mx-10 lg:mx-24">
+            First Mr Ajit always pays regards to your individual requirements and tries to make the relocation extremely hassle free.
+            Also the quality of packing material used was extremely goods. Even my neighbours were impressed with their packing and 
+            loading standards. 
+            Though we faced a few hiccups but Mr Ajit never lets you get bothered and looked into each aspect personally.
+          </p>
+        </div>
+
+        <a
+          class="prev cursor-pointer hover:bg-black hover:text-white p-2 rounded-lg m-2"
+          onclick="plusSlides(-1)"
+          >❮</a
+        >
+        <a
+          class="next cursor-pointer hover:bg-black hover:text-white p-2 rounded-lg m-2"
+          onclick="plusSlides(1)"
+          >❯</a
+        >
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot " onclick="currentSlide(1)"></span>
+        <span class="dot " onclick="currentSlide(2)"></span>
+        <span class="dot " onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+  </div>
+
+    <!-- footer -->
+     
+    <%-include('partials/footer')-%>
+    <!-- ..................................................... -->
+  </div>
+</body>
+ 
+  <script  src="../assets/home.js">
+  
+  </script>
+</html>

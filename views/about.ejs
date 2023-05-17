@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet" />
+
+      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- title -->
+    <title>PickNTrack</title>
+
+    <!-- tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+        .bg-blackish {
+          background-color: #2e2e2e;
+        }
+        .bg-yellowish {
+          background-color: #ffe1a3;
+        }
+        
+
+            .mainsection
+            {
+                margin-top: 100px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .truckimg
+            {
+                margin-right: 100px;
+            }
+            .mainsectiontitle h1
+            {
+                font-family:  url('fonts/Gotham-Bold.eot');
+                font-style: normal;
+                font-weight: 900;
+                font-size: 50px;
+                line-height: 60px;
+            }
+            .mainsectionsecondtitle h1 {
+                font-family:'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 38px;
+            text-align: justify;
+
+            color: #BA3C21;
+            }
+            .truckimg img
+            {
+                width: 600px;
+                height: 300px;
+                transition: transform 2s;
+               
+            }
+            .truckimg img:hover
+            {
+              transform: translateX(-1200px);
+            }
+            .mainsectiontext
+            {
+            margin-left: 100px;
+            }
+            .secondsection
+            {
+            max-width: 85%;
+            margin-left: 100px;
+            margin-top: 150px;
+            }
+            .secondsection p
+            {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 26px;
+                text-align: justify;
+            }
+            .thirdsection
+            {
+                width: 85%;
+                height: auto;
+                margin-left: 100px;
+                padding-right: 40px;
+                text-align: justify;
+                margin-top: 100px;
+            }
+            .thirdsection p
+            {
+                font-family:  'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 26px;
+                
+            }
+            .quickbutton button
+            {
+                
+                width: 203px;
+                height: 60px;
+                margin-left: 100px;
+                border-radius: 10px;
+                background-color: black;
+                margin-top: 70px;
+                color: white;
+            }
+            .numbersection
+            {
+                width:85%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-left: 100px;
+                margin-top: 100px;
+                text-align: center;
+                justify-content: space-between;
+                margin-bottom: 100px;
+            }
+            .numbersection-first
+            {
+                width: 250px;
+            }
+            .numbersection-first h1
+            {
+                font-family:  'Montserrat';
+                font-style: normal;
+                font-weight: 900;
+                font-size: 40px;
+                line-height: 51px;
+                color: #002F56;
+            }
+            .numbersection-first p
+            {
+                font-family:  'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 28px;
+                text-align: center;
+                margin-top: 30px;
+            }
+            /*Responsive CSS */
+            @media screen and (max-width: 480px) {
+             
+             
+          .mainsection
+            {
+                flex-direction: column-reverse;
+                justify-content: center;
+                margin-top: 50px;
+                
+            }
+            .truckimg
+            {
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            .mainsectiontitle h1
+            {
+                 font-size: 30px;
+                 font-weight: 900;
+                 
+            }
+            .mainsectiontext
+            {
+                margin-left: 10px;
+            }
+            .secondsection
+            {
+                margin-left: 0px;
+                padding:20px;
+                min-width: 100%;
+                margin-top: 5px;
+            }
+            .mainsectionsecondtitle h1 
+            {
+                font-size: 25px;
+                font-weight: 700;
+                text-align: center;
+            }
+            
+            .secondsection p
+            {
+              font-size: 15px;
+              line-height: 150%;
+            }
+            .numbersection
+            {
+                min-width: 80%;
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
+            }
+            .numbersection-first
+            {
+              margin-bottom: 30px;
+            }
+            .numbersection-first h1
+            {
+              line-height: 100%;
+            }
+            .numbersection-first p
+            {
+              line-height:100%;
+              margin-top: 10px;
+            }
+            .thirdsection
+            {
+                margin-left: 0px;
+                height: auto;
+                min-width: 100%;
+                padding:20px;
+                margin-top: 2px;
+            }
+            
+            .thirdsection p
+            {
+              line-height: 150%;
+              font-size:15px;
+            }
+            .numbersection
+            {
+                margin-top: 20px;
+                margin-left:0px;
+                min-width:100%;
+                margin-bottom: -20px;
+            }
+            .quickbutton button 
+            {
+                align-items: center;
+                height: 50px;
+                width: 150px;
+                margin-top: 20px;
+            }
+            .exprience-heading
+            {
+              margin-left: 10px;
+            }
+        
+}
+@media screen and (max-width: 1200px)
+{
+     .mainsection
+     {
+      max-width: 100%;
+     }
+     .secondsection
+     {
+      max-width: 80%;
+     }
+     .thirdsection
+     {
+      max-width: 80%;
+     }
+     .numbersection
+     {
+      max-width: 80%;
+     }
+}
+  /*Popup */
+ 
+  
+           
+          
+
+</style>
+
+<%-include('partials/privacy')-%>
+  <%-include('partials/tandc')-%>
+  <%-include('partials/faq')-%>
+  <%-include('partials/disclaimer')-%>
+      
+ <%-include('partials/thankspopup')-%>
+ <section class="md:h-full lg:w-[70%] w-[100%] flex items-center text-gray-600  absolute mt-[5%] lg:mr-[10%] lg:ml-[16%] hidden" id="enquirypopup">
+  <div class="container  px-5 py-14 mx-auto">
+     
+<div class="row  w-[100%]  bg-gray-100  rounded-lg shadow px-4">
+  
+  <form class="space-y-6 bg-gray-100 " action="#" method="post">
+    <div class=" text-gray-900 dark:text-white flex flex-row pt-[20px] ">
+      <h1 class="text-black lg:font-bold  font-semibold lg:text-xl text-lg">Please fill in below form fields <br class="lg:hidden">and send us your Enquiry.</h1>
+      <h1 class="absolute right-10 text-black lg:font-bold font-semibold lg:text-2xl  text-xl cursor-pointer" id="closeenquirypopup">X</h1>
+    </div>
+      <div>
+          <label for="name" class="block mb-2 -mt-2 text-lg text-black bold ">Name*</label>
+          <input type="name" name="name" class="bg-gray-300 text-black  text-sm rounded-full block w-full p-2.5 " required>
+      </div>
+
+      <div>
+        <label for="email" class="block mb-2 text-lg text-black bold ">Email*</label>
+        <input type="email" name="email" class="bg-gray-300 text-black  text-sm rounded-full block w-full p-2.5 " required>
+    </div>
+      
+    <div >
+      <label for="email" class="block mb-2 text-lg text-black bold ">Phone Number*</label>
+
+<div class="flex gap-3 ">
+  <select class=" ... place bg-gray-300 text-black  text-sm rounded-full block lg:w-[60px] p-1 " name="countrycode">
+    <option value="+91">+91</option>
+    <option value="+31">+31</option>
+    <option value="+02">+02</option>
+    <option value="+15">+15</option>
+</select>
+
+<div class="col-span-10 w-full">
+      <input type="tel" name="phone" class="bg-gray-300 text-black  text-sm rounded-full block w-full  p-2.5 " required> 
+</div>
+</div>
+</div>
+  <div>
+    <label for="loctaion" class="block mb-2 text-lg text-black bold ">Location*</label>
+    <input type="name" name="location" class="bg-gray-300 text-black  text-sm rounded-full block w-full p-2.5 " required>
+</div>
+
+
+<div >
+  <label for="msgg" class="block mb-2 text-lg text-black bold ">Message*</label>
+  <input type="name" name="message" class="bg-gray-300 text-black  text-sm rounded-full block w-full p-2.5 " required>
+</div>
+<div>
+<button class="bg-black text-white font-bold text-xl py-2 px-10 rounded-full " type="submit">Submit</button>
+</div>
+<br>
+
+      
+     
+  </form>
+
+</div>
+</section>
+
+
+      <!-- header section -->
+<%-include('partials/header')-%>
+
+      <!--Navbar Ends-->
+      <div class="mainsection w-full">
+            <div class="mainsectiontext">
+                <div class="mainsectiontitle">
+                    <h1>About Pick'N Track</h1>
+                </div>
+                <div class="mainsectionsecondtitle mt-5">
+                    <h1>We Are Accredited</h1>
+                </div>
+            </div>
+            <div class="truckimg">
+            <img src="public/images/truck.svg">
+            </div>
+     </div>
+     <!--PopUP Form-->
+
+ <!--Second Section Text of about page-->
+    <div class="secondsection">
+      <p>
+         Pick And Track offers secure and genuine home moving services.
+          We have accredited Shifting partners across India, who will convey your No1 household moving 
+          Services for local home packing moving and domestic as well as international relocation services. 
+          Straight forwardly interface with top packers and movers close by you, and get fast charges assessment from best 
+          Packers and Movers from your area, look at rates, evaluations, and surveys. You can contact anyone else or request that 
+          we observe the best match close by packers movers company. We have recorded proficient packers and movers, Local house moving 
+          specialists local house moving services, car transport services, office shifting services, bike moving services. Our accomplished
+           movers and packers give total migration Services from dismantling, packing, loading, transport, dumping, unloading to
+            the appropriate position of your household and Machinery. Look for packers and movers close by you to get
+          packers and movers charges, rate list, cost estimation, transit travel time, Best packers and movers surveys for your shifting.
+      </p>
+ </div>
+ <!--Thanks Pop UP-->
+ <!--Thankspopup ends-->
+ <!--Third Section    -->
+ 
+ <div class="thirdsection ">
+   <b>
+     <h1 class="text-bold lg:text-5xl text-3xl">Mission</h1>
+   </b>
+     <br class="hidden lg:flex">
+     <br class="hidden lg:flex">
+     
+     <br>
+     <p>
+         At the core of our way of life
+          is a mix of mentalities, convictions, and values and a mission shared by our 
+          supervisory group and our representatives
+     </p>
+     <br>
+     <p>
+         Our way of life has been created over our long term history and 
+         is the basic establishment that shapes the manner in which we work, our frameworks and cycles,
+          our way to deal with our representatives and clients, and our effect on the more extensive local area and climate.
+     </p>
+     <br>
+     <p class="text-left" >
+         "Our Mission to offer predictable magnificent support to our customers"
+     </p>
+     <br>
+     <p> We accomplish our central goal by:</p>
+     <br>
+     <p>• Getting our clients'' individual requirements and afterward conveying services to increase their assumptions.</p>
+     <p>• Create innovative, customised solutions geared to each transferee’s unique requirements.</p>
+     <p>• Giving a positive culture to our staff to learn and develop Implement simple yet first-class services and support.</p>
+     <p>• Taking on best practices to decrease the effect of our business on the climate and the more extensive local  area.</p>
+     <p>• Acting with the most noteworthy respectability consistently.</p> 
+     <br>
+     <p>
+         Amazing Solution expect to give the most elevated conceivable nature of Services, 
+         has led to the advancement of wonderful arrangement'' Moving with Quality'' drive, 
+         a cross country program of client assessment, best practice methodology,
+          execution improvement arranging, consistent preparation, and survey.
+     </p>
+     <br>
+     <p>
+         Moving with Quality'' drive, a cross 
+         country program of client assessment, best
+          practice methodology, execution improvement arranging, 
+          consistent preparation, and survey. Moving with Quality means to make an incredible encounter 
+          for our clients when they move home or business, and joined with the standards of ISO the board frameworks and licenses,
+          makes a structure of conduct, process and guidelines to drive quality through our association.
+     </p>
+ </div>
+ <!--Button section-->
+ <div class="quickbutton">
+  <a href="#enquirypopup">
+     <button id="openenquiryform">Quick Enquiry</button>
+    </a>
+ </div>
+ <!--Numbers Section-->
+ 
+ <div class="numbersection">
+     <div class="numbersection-first">
+         <h1><span class="exprience-heading num " data-val="25"></span>+ Years</h1>
+         <br>
+         <p>Experienced Team in Industry</p>
+     </div>
+     <div class="numbersection-first">
+        <h1><span class="largenum" largedata-val="50000"></span>+</h1> 
+        <br>
+         <p>Happy <br>Customers</p>
+     </div>
+     <div class="numbersection-first">
+         <h1><span class="mediumnum" mediumdata-val="5000"></span>+</h1>
+         <br>
+         <p>Pincode <br>Served</p>
+     </div>
+     <div class="numbersection-first">
+        <h1> <span class="num" data-val="1000"></span>+</h1>
+        <br>
+         <p> Registered<br> Clients</p>
+     </div>
+ 
+ </div>
+ <!--Footer-->
+ <%-include('partials/footer')-%> 
+   </div>
+ </body>
+ <script>
+    // Function  for the running number .........................
+  {  
+     let valueDisplays = document.querySelectorAll(".num");
+     let interval = 4000;
+
+    valueDisplays.forEach((valueDisplay) => {
+    let startValue = 0;
+    let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+
+    let duration = Math.floor(interval / endValue);
+
+   let counter = setInterval(function () {
+    startValue += 1;
+    valueDisplay.textContent = startValue;
+    if (startValue == endValue) {
+      clearInterval(counter);
+    }
+  }, duration);
+});
+}
+
+// Function for running large number..........................
+    {
+                let valueDisplays = document.querySelectorAll(".largenum");
+            let interval =10;
+
+            valueDisplays.forEach((valueDisplay) => {
+            let startValue =45000;
+            let endValue = parseInt(valueDisplay.getAttribute("largedata-val"));
+
+            let duration = Math.floor(interval / endValue);
+
+            let counter = setInterval(function () {
+            startValue += 1;
+            valueDisplay.textContent = startValue;
+            if (startValue == endValue) {
+            clearInterval(counter);
+            }
+        }, duration);
+        });
+    } 
+
+// function for the medium number
+    {
+            let valueDisplays = document.querySelectorAll(".mediumnum");
+            let interval =10;
+
+            valueDisplays.forEach((valueDisplay) => {
+            let startValue =3000;
+            let endValue = parseInt(valueDisplay.getAttribute("mediumdata-val"));
+
+            let duration = Math.floor(interval / endValue);
+
+            let counter = setInterval(function () {
+            startValue += 1;
+            valueDisplay.textContent = startValue;
+            if (startValue == endValue) {
+            clearInterval(counter);
+            }
+        }, duration);
+        });
+    }
+   //
+   ///
+   ///////////////////////////////////////////////////////////////////////// 
+    // to get user location code................
+                let locationButton = document.getElementById("get-location");
+            let locationDiv = document.getElementById("location-details");
+            locationButton.addEventListener("click", () => {
+  //Geolocation APU is used to get geographical position of a user and is available inside the navigator object
+  if (navigator.geolocation) {
+    //returns position(latitude and longitude) or error
+    navigator.geolocation.getCurrentPosition(showLocation, checkError);
+  } else {
+    //For old browser i.e IE
+    locationDiv.innerText = "The browser does not support geolocation";
+  }
+});
+//Error Checks
+const checkError = (error) => {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      locationDiv.innerText = "Please allow access to location";
+      break;
+    case error.POSITION_UNAVAILABLE:
+      //usually fired for firefox
+      locationDiv.innerText = "Location Information unavailable";
+      break;
+    case error.TIMEOUT:
+      locationDiv.innerText = "The request to get user location timed out";
+  }
+};
+const showLocation = async (position) => {
+  //We user the NOminatim API for getting actual addres from latitude and longitude
+  let response = await fetch(
+    `https://nominatim.openstreetmap.org/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`
+  );
+  //store response object
+  let data = await response.json();
+  locationDiv.innerText = `${data.address.city}, ${data.address.country}`;
+};
+// COde for navbar
+const burger = document.getElementById('burger')
+    const navbar = document.getElementById('navbar')
+    const navlist = document.getElementById('nav-list')
+    const closemenu = document.getElementById('closemenu')
+    burger.addEventListener('click',function openmenu()
+    {
+            navbar.style.maxHeight='300px'
+            navlist.style.opacity='1'
+            navlist.style.pointerEvents='auto'
+            closemenu.style.display='block'
+            burger.style.display='none'
+    })
+    closemenu.addEventListener('click',function closenav()
+    {
+        burger.style.display='block'
+        closemenu.style.display='none'
+        navlist.style.opacity='0'
+        navbar.style.maxHeight='60px'
+        navlist.style.pointerEvents='none'
+    })
+   // popup script
+   const varbody= document.getElementById('struct');
+   function blurbody()
+{
+  varbody.style.opacity='0.2'
+  varbody.style.pointerEvents='none'
+  varbody.style.userSelect='none'
+}
+function freebody()
+{
+      varbody.style.opacity='1'
+      varbody.style.pointerEvents='auto'
+      varbody.style.userSelect='auto'
+}
+   document.getElementById('closeenquirypopup').addEventListener('click',()=>
+   {
+       document.getElementById('enquirypopup').style.display='none';
+       document.getElementById('enquirypopup').style.opacity='0'
+       freebody()
+   })
+   document.getElementById('openenquiryform').addEventListener('click',()=>
+  {
+      document.getElementById('enquirypopup').style.display='block';
+      document.getElementById('enquirypopup').style.opacity='1';
+      document.getElementById('enquirypopup').style.zIndex='100'
+      blurbody()
+  })
+ // Privacy popup
+ const privacypopup = document.getElementById('privacypopup')
+    document.getElementById('closeprivacypopup').addEventListener('click',closepopup)
+    function closepopup()
+    {
+        
+        privacypopup.style.display='none'
+        freebody()
+    }  
+     //open popuop
+    document.getElementById('openprivacypopup').addEventListener('click',openpopup)
+    document.getElementById('openmobprivacypopup').addEventListener('click',openpopup)
+    function openpopup()
+    {
+        
+        privacypopup.style.display='block'
+        privacypopup.style.opacity='1'
+        blurbody()
+    }  
+// terms popup
+const termspopup = document.getElementById('termspopup')
+    document.getElementById('closetermspopup').addEventListener('click',closetermspopup)
+    function closetermspopup()
+    {
+       
+        termspopup.style.display='none'
+        freebody()
+    }  
+     //open popuop
+    document.getElementById('opentermspopup').addEventListener('click',opentermspopup)
+    document.getElementById('openmobtermspopup').addEventListener('click',opentermspopup)
+    function opentermspopup()
+    {
+       
+        termspopup.style.display='block'
+        termspopup.style.opacity='1'
+        blurbody()
+    } 
+    // Faq popup
+const faqpopup = document.getElementById('faqpopup')
+    document.getElementById('closefaqpopup').addEventListener('click',closefaqpopup)
+    function closefaqpopup()
+    {
+      
+        faqpopup.style.display='none'
+         freebody()
+    }  
+     //open faqpopuop
+    document.getElementById('openfaqpopup').addEventListener('click',openfaqpopup)
+    document.getElementById('openmobfaqpopup').addEventListener('click',openfaqpopup)
+    function openfaqpopup()
+    {
+       
+        faqpopup.style.display='block'
+        faqpopup.style.opacity='1'
+          blurbody()
+    }
+    // open disclaimer popup 
+     document.getElementById('opendispopup').addEventListener('click' ,opendisclaimer)
+     document.getElementById('openmobdispopup').addEventListener('click',opendisclaimer)
+     function opendisclaimer()
+     {
+        document.getElementById('dispopup').style.display='block'
+        document.getElementById('dispopup').style.opacity='1'
+        blurbody()
+     }
+     //close disclaimerpopup
+      document.getElementById('closedispopup').addEventListener('click',()=>
+      {
+         document.getElementById('dispopup').style.display='none'
+         freebody()
+      })
+    // thanks popup
+    //closethankspopup
+     document.getElementById('closethankspopup').addEventListener('click',closethankspopup)
+     document.getElementById('closemobthankspopup').addEventListener('click',closethankspopup)
+     function closethankspopup()
+     {
+        document.getElementById('thankspopup').style.display='none'
+        freebody()
+     }
+     // open thankspopoup
+      const thanksmessage = '<%=message%>'
+      if(thanksmessage=='true')
+      {
+        document.getElementById('thankspopup').style.display='flex'
+        document.getElementById('thankspopup').style.opacity='1'
+        document.getElementById('thankspopup').style.zIndex='400'
+         blurbody()
+      }
+ </script>
+ </html>
+
+</body>
+</html>

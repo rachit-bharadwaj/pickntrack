@@ -1,0 +1,187 @@
+
+
+.mainsection
+{
+    margin-top: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.truckimg
+{
+    margin-right: 100px;
+}
+.mainsectiontitle h1
+{
+    font-family:  url('fonts/Gotham-Bold.eot');
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 60px;
+}
+.mainsectionsecondtitle h1 {
+    font-family:'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 38px;
+text-align: justify;
+
+color: #BA3C21;
+}
+.truckimg img
+{
+    width: 600px;
+    height: 300px;
+}
+.mainsectiontext
+{
+   margin-left: 100px;
+}
+.secondsection
+{
+   width: 1200px;
+   margin-left: 100px;
+   padding-right: 40px;
+   margin-top: 70px;
+}
+.secondsection p
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: justify;
+}
+.thirdsection
+{
+    width: 1200px;
+    height: 720px;
+    margin-left: 100px;
+    padding-right: 40px;
+    text-align: justify;
+    margin-top: 100px;
+}
+.thirdsection p
+{
+    font-family:  'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    
+}
+.quickbutton button
+{
+    width: 203px;
+    height: 60px;
+    margin-left: 100px;
+    border-radius: 10px;
+    background-color: black;
+    margin-top: 70px;
+    color: white;
+}
+.numbersection
+{
+    width:1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 100px;
+    margin-top: 100px;
+    text-align: center;
+    justify-content: space-between;
+}
+.numbersection-first
+{
+    width: 250px;
+}
+.numbersection-first h1
+{
+     font-family:  'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 51px;
+    color: #002F56;
+}
+.numbersection-first p
+{
+    font-family:  'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 28px;
+    text-align: center;
+    margin-top: 30px;
+}
+.popupform
+{
+    position: absolute;
+    width: 800px;
+    height: 590px;
+    left:300px;
+    top: 1500px;
+    background: #F2F2F2;
+    border-radius: 10px;
+    display: none;
+}
+.firstdivpopform
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.firstdivpopform h1
+{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.firstdivpopform a
+{
+    color: black;
+    text-decoration: none;
+}
+.form{
+    height: 500px ;
+    border: 2px solid #F2F2F2;
+    border-radius: 15px;
+    background: #f5f3f3;
+    
+}
+.location1{
+    font-size:24px;
+    font-family: url('fonts/Gotham-Bold.eot');
+    font-style:normal;
+}
+
+.about-name{
+    font-family: "Poppins";
+    font-style: "Medium";
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.about-form-inputs
+{
+    margin-left: 30px;
+    margin-right: 20px;
+}
+.place{
+    height: 40px;
+    width: 95%;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    background-color:  #E4E4E4;
+
+}
+.about-submit{
+justify-content: center;
+align-items: center;
+width: 102px;
+height: 40px;
+background: #2E2E2E;
+border-radius: 100px;
+color: #F2F2F2;
+}

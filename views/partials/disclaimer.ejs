@@ -1,0 +1,78 @@
+<style>
+    .dispopup
+      {
+          box-sizing: border-box;
+          position:absolute;
+          height: auto;
+          top: 100px;
+          left: 200px;
+          margin: 0 auto;
+          background: #FFFFFF;
+          display: none;
+          border: 1.26643px solid rgba(112, 112, 112, 0.6);
+          border-radius: 8.44284px;
+          z-index: 99;
+          padding: 15px;
+          text-align: justify;
+          font-family: 'Lato';
+          justify-self: center;
+      }
+      .dispopup h3
+      {   
+           font-size: 20px;
+           margin-bottom: 5px;
+           font-weight: bold;
+      }
+      .dispopup p{
+         font-size: 15px;
+      }
+      .line
+      {
+        height: 2px;
+        background-color: black;
+        min-width: 323px;
+      }
+      .popupnav
+      {
+        position: sticky;
+      }
+      .dis-content
+      {
+        overflow:auto;
+        height: 525px ;
+        padding-right: 10px;
+        
+      }
+      ::-webkit-scrollbar {
+        display: none;
+         }
+         @media screen and (max-width: 480px) {
+         .dispopup
+         {
+            left: 5px;
+            margin: 0 auto;
+            right:5px;
+            justify-self: center;
+            width: 350px;
+            height: 600px;
+         }
+    }
+    </style>
+
+
+
+
+<div class="dispopup w-fit lg:w-[1000px] " id="dispopup">
+    <div class="flex lg:space-x-[75%] mb-[10px] popupnav space-x-[27%] lg:py-7 lg:px-5 ">
+    <h1 class="text-3xl lg:font-extrabold font-bold">Disclaimer</h1>
+    <h1 id="closedispopup" class="cursor-pointer text-3xl lg:font-extrabold font-bold flex absolute right-3">X</h1>
+  </div>
+     <div class="line mb-[10px] "></div>
+    <div class="dis-content lg:mt-7 py-2">
+        <h3>Disclaimer</h3>
+        <p>All movers registered with the Company are continuously tracked using mobile technology for security reasons only. It is hereby made expressly clear to you that the Company does not own any movers nor it directly or indirectly employ any driver for the vehicles or Labour for loading/unloading of Consignment. Vehicles, drivers and Labour are all supplied by third parties and the Company disclaims any and all liability(ies) in respect of the Labour, drivers and vehicles alike.
+
+          The Company have right to use the customer contact information for its own marketing purposes. The Company may send regular SMS updates to the mobile numbers registered with it.</p>
+    </div>
+  
+  </div> 

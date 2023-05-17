@@ -1,0 +1,132 @@
+<style>
+    @media screen and (max-width: 480px)
+{
+    .footer-home
+    {
+        display: none;
+    }
+}
+/* Navbar */
+  #navbar
+  {
+    max-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+   #nav-list
+   {
+      opacity: 0;
+      transition: all 0.5s ease-out;
+      pointer-events: none;
+      user-select: none;
+   }
+  #closemenu
+  {
+    display: none;
+  }
+ /* slider */
+
+@media all and (max-width: 1000px) and (min-width: 500px)
+{
+    
+    .footer-home
+    {
+        display: none;
+    }
+    
+}
+@media (min-width:749px) {
+    .mob-footer{
+      display: none;
+    }
+  }         
+            
+    
+</style>
+<div id="struct">
+  <!-- header section -->
+  <header>
+      <!-- upper -->
+      <div class="bg-blackish flex justify-between lg:px-24 lg:items-center">
+        <div class="md:flex md:gap-5">
+          <div class="flex gap-1 p-1">
+            <img src="./public/images/phone-logo.png" alt="phone logo" class="h-5" />
+            <p class="text-white text-sm md:text-base">
+              <span><a href="tel:+919113651818"></a>+91 911-365-1818 </span>/<br class="lg:hidden"> <span><a href="tel:+919538531818">+91 953-853-1818</a></span>
+            </p>
+          </div>
+
+          <div class="flex gap-1 p-1 lg:border-r-2 lg:border-l-2 px-2">
+            <img src="./public/images/email-logo.png" alt="email logo" class="h-5" />
+            <a
+              href="mailto:info@pickntrack.com"
+              class="text-white text-sm md:text-base"
+            >
+           
+              info@pickntrack.com</a
+            >
+          </div>
+         
+        </div>
+
+        <div class="flex bg-yellowish items-center gap-1 p-[10px] cursor-pointer" id="get-location">
+          <img src="./public/images/location-logo.png" alt="email logo" class="h-5" />
+          <p class="text-sm md:text-base" id="location-details">Select Your City</p>
+        </div>
+      </div>
+   <!-- lower -->
+      <div>
+       
+
+        <!-- for large screens -->
+        <div class=" lg:flex justify-between  items-center bg-yellowish  lg:py-10 lg:px-24 " id="navbar">
+          <a href="/">
+          <img src="public/images/logo-big.svg" alt="logo" class="hidden lg:flex" />
+        </a>
+          <div class="flex justify-between bg-yellowish pt-2 lg:hidden w-[100%] h-[40px] items-center ">
+            <a href="/">
+              <img src="./public/images/logo-small.svg" alt="" class=" ml-[10px]" />
+            </a>
+    
+              <img
+                src="https://img.icons8.com/ios-glyphs/48/null/menu--v1.png"
+                class="h-7 cursor-pointer mr-[10px] "
+                id="burger"
+              />  
+              <h1 id="closemenu" class="text-3xl cursor-pointer mr-[10px]">X</h1>
+            </div>
+           
+          <ul class="flex gap-10 font-bold text-lg hidden lg:flex">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+          <!--Mobile Menu-->
+          
+      <div class=" flex flex-col justify-center items-center lg:hidden " id="nav-list">
+        
+          <ul class=" text-lg  font-bold space-y-5 gap-5">
+              <a href="/" class="group hover:font-bold">
+                <li>Home</li>
+                <div
+                  class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                ></div>
+              </a>
+              <a href="/about" class="group hover:font-bold">
+                <li>About</li>
+                <div
+                  class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                ></div>
+              </a>
+              <a href="/contact" class="group hover:font-bold">
+                <li>Contact</li>
+                <div
+                  class="hidden bg-dark h-2 w-2 mx-auto rounded-full animate-bounce group-hover:flex"
+                ></div>
+              </a>
+            </ul>
+      </div>
+        </div>
+          <!-- mobile menu -->
+        
+      </div>
+    </header>
